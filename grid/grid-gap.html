@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); //列
+            grid-column-gap: 1em;
+            grid-gap: 1em;  //gap需两个一起设置
+            grid-auto-rows: 200px;
+            grid-auto-rows:  minmax(150px, auto); // 150px 设置行高 , 若内容超过行高 则溢出显示在下面
+            grid-auto-rows: minmax(150px, auto);
+            color:green;
+        }
+        .wrapper > div{
+            background: #eee;
+            margin-bottom: 1em;
+        }
+        .wrapper > div:nth-child(odd){
+            background-color: darkred;
+        }
+        .nested{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 1em;
+            grid-gap:1em;
+            grid-auto-rows: minmax(70px, auto);
+        }
+        .nested > div{
+            border:black 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            点击“删除”按钮时，弹出Alert弹窗，提示“是否确认删除，删除后不可恢复。”；按钮显示“是”&“否”
+            6-1.点击“是”：此时需要判断，是否存在有效的活动中的有效的券池正在使用当前用户标签，若存在则Toast提示“活动 $活动id  正在使用该用户标签，无法删除"，随后不做删除操作；若不存在则尝试删除。（注：有效均指当前时间在活动有效期间以及券池有效期间。
+        </div>
+        <div>
+            9.提交时，校验城市
+            若失败：按照城市失败提示进行弹窗提醒，在前端补充文案：“城市配置”，例如“城市配置共有一处错误”
+            若成功：则提交成功
+        </div>
+        <div class="nested">
+            <div>
+                9.提交时，校验城市
+            </div>
+            <div>
+                若失败：按照城市失败提示进行弹窗提醒，在前端补充文案：“城市配置”，例如“城市配置共有一处错误”
+            </div>
+            <div>
+                若成功：则提交成功
+            </div>
+            <div>
+                9.提交时，校验城市
+            </div>
+            <div>
+                若失败：按照城市失败提示进行弹窗提醒，在前端补充文案：“城市配置”，例如“城市配置共有一处错误”
+            </div>
+            <div>
+                若成功：则提交成功
+            </div>
+        </div>
+        <div>
+            9.提交时，校验城市
+            若失败：按照城市失败提示进行弹窗提醒，在前端补充文案：“城市配置”，例如“城市配置共有一处错误”
+            若成功：则提交成功
+        </div>
+        <div>
+            9.提交时，校验城市
+            若失败：按照城市失败提示进行弹窗提醒，在前端补充文案：“城市配置”，例如“城市配置共有一处错误”
+            若成功：则提交成功
+        </div>
+    </div>
+
+</body>
+</html>
